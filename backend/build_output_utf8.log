@@ -1,0 +1,89 @@
+﻿mvn : WARNING: A 
+restricted method in 
+java.lang.System has 
+been called
+At line:1 char:1
++ mvn clean compile > 
+build_output.log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : 
+NotSpecified    : 
+(WARNING: A rest.    
+..has been called:S    
+tring) [], RemoteEx    
+ception
+    + 
+FullyQualifiedErr    
+orId : NativeComman    
+dError
+ 
+WARNING: 
+java.lang.System::load 
+has been called by org.
+fusesource.jansi.intern
+al.JansiLoader in an 
+unnamed module (file:/C
+:/Users/KERUTHIK/maven/
+apache-maven-3.9.9/lib/
+jansi-2.4.1.jar)
+WARNING: Use --enable-n
+ative-access=ALL-UNNAME
+D to avoid a warning 
+for callers in this 
+module
+WARNING: Restricted 
+methods will be 
+blocked in a future 
+release unless native 
+access is enabled
+
+WARNING: A terminally 
+deprecated method in 
+sun.misc.Unsafe has 
+been called
+WARNING: sun.misc.Unsaf
+e::objectFieldOffset 
+has been called by com.
+google.common.util.conc
+urrent.AbstractFuture$U
+nsafeAtomicHelper (file
+:/C:/Users/KERUTHIK/mav
+en/apache-maven-3.9.9/l
+ib/guava-33.2.1-jre.jar
+)
+WARNING: Please 
+consider reporting 
+this to the 
+maintainers of class co
+m.google.common.util.co
+ncurrent.AbstractFuture
+$UnsafeAtomicHelper
+WARNING: sun.misc.Unsaf
+e::objectFieldOffset 
+will be removed in a 
+future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.nexusflow:nexusflow-backend >-------------------
+[INFO] Building NexusFlow Backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ nexusflow-backend ---
+[INFO] Deleting D:\PCDP\Figma Frontend\backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ nexusflow-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ nexusflow-backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 69 source files with javac [debug release 17] to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.606 s
+[INFO] Finished at: 2026-03-11T11:38:32+05:30
+[INFO] ------------------------------------------------------------------------

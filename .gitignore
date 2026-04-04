@@ -1,0 +1,51 @@
+# ===========================
+# Node / Frontend
+# ===========================
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# NPM / PNPM / Yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===========================
+# Java / Spring Boot / Maven
+# ===========================
+backend/target/
+backend/*.class
+backend/*.jar
+backend/*.war
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# ===========================
+# IDE / Editor
+# ===========================
+.vscode/settings.json
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# ===========================
+# OS
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Misc temp / debug files
+# ===========================
+*.txt
+*.py
+*.js
+error.json
+out.txt

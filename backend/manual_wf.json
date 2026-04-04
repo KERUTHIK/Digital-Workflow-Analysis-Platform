@@ -1,0 +1,15 @@
+{
+    "name": "Manual Test Workflow",
+    "description": "Created via curl",
+    "status": "Active",
+    "projectCount": 0,
+    "createdBy": "Test Admin 4",
+    "stages": [
+        {
+            "orderIndex": 1,
+            "name": "Stage 1",
+            "role": "ADMIN",
+            "slaHours": 24
+        }
+    ]
+}

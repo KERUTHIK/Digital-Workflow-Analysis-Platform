@@ -1,0 +1,6 @@
+{
+    "name": "Test Admin",
+    "email": "test.admin@nexusflow.io",
+    "password": "Password@123",
+    "role": "ADMIN"
+}
