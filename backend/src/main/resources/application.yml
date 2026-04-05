@@ -1,14 +1,14 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: nexusflow-backend
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/nexusflow?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
-    username: root
-    password: 6125
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/nexusflow?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:6125}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       connection-timeout: 20000
@@ -37,7 +37,7 @@ spring:
 
 # ─── JWT Configuration ────────────────────────────────────────────────────────
 jwt:
-  secret: NexusFlow@SuperSecretKey2024!MustBe256BitsOrMoreForHS256Algorithm
+  secret: ${JWT_SECRET:NexusFlow@SuperSecretKey2024!MustBe256BitsOrMoreForHS256Algorithm}
   expiration: 86400000   # 24 hours in milliseconds
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
