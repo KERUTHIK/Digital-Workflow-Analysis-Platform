@@ -1,5 +1,6 @@
 package com.nexusflow.security;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +24,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,6 +41,10 @@ public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
     private final CustomUserDetailsService userDetailsService;
+
+    /** Vercel frontend URL — set this as ALLOWED_ORIGIN env var in Railway */
+    @Value("${ALLOWED_ORIGIN:}")
+    private String allowedOrigin;
 
     public SecurityConfig(JwtAuthFilter jwtAuthFilter, CustomUserDetailsService userDetailsService) {
         this.jwtAuthFilter = jwtAuthFilter;
@@ -112,11 +118,18 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(
+
+        List<String> origins = new ArrayList<>(List.of(
                 "http://localhost:5173",   // Vite dev server
                 "http://localhost:3000",   // CRA / Next.js
                 "http://localhost:4200"    // Angular
         ));
+        // Add Vercel production URL from env var (set ALLOWED_ORIGIN in Railway)
+        if (allowedOrigin != null && !allowedOrigin.isBlank()) {
+            origins.add(allowedOrigin);
+        }
+
+        configuration.setAllowedOrigins(origins);
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setExposedHeaders(List.of("Authorization"));
