@@ -6,9 +6,9 @@ spring:
     name: nexusflow-backend
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/nexusflow?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true}
+    url: "${DB_URL:jdbc:mysql://127.0.0.1:3306/nexusflow?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true}"
     username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:6125}
+    password: "${DB_PASSWORD:6125}"
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       connection-timeout: 20000
